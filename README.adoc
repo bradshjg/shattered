@@ -59,3 +59,5 @@ app.run()
 Start up RabbitMQ using `docker-compose up`
 
 In another shell, run `docker-compose run shattered python examples/echo/echo.py`
+
+In another shell, run `docker-compose run shattered python examples/echo/send.py`

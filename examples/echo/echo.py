@@ -11,14 +11,12 @@ app = Shattered(host="rabbitmq")
 
 @app.subscribe("/queue/echo")
 def echo(headers, body, conn):
-    logger.info("Message headers: %s", headers)
-    logger.info("Message body: %s", body)
-    logger.info("Connection: %s", conn)
+    logger.info("%s %s", headers, body)
 
 
 @app.subscribe("/queue/echo")
 def echo_fancy(headers, body, conn):
-    logger.info("%s %s", headers, body)
+    logger.info("✨✨✨%s %s✨✨✨", headers, body)
 
 
 app.run()
