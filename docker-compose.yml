@@ -1,0 +1,10 @@
+version: '2'
+services:
+  rabbitmq:
+    build: rabbitmq
+  shattered:
+    build: .
+    tty: true
+    stdin_open: true
+    volumes:
+    - .:/src

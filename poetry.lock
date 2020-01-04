@@ -1,0 +1,32 @@
+[[package]]
+category = "main"
+description = "Pythonic argument parser, that will make you smile"
+name = "docopt"
+optional = false
+python-versions = "*"
+version = "0.6.2"
+
+[[package]]
+category = "main"
+description = "Python STOMP client, supporting versions 1.0, 1.1 and 1.2 of the protocol"
+name = "stomp.py"
+optional = false
+python-versions = "*"
+version = "5.0.0"
+
+[package.dependencies]
+docopt = ">=0.6.2"
+
+[metadata]
+content-hash = "ec33782031a3ba3dd386d662aa3abaa597915b08236118e65c06a3018aa80602"
+python-versions = "^3.6"
+
+[metadata.files]
+docopt = [
+    {file = "docopt-0.6.2.tar.gz", hash = "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"},
+]
+"stomp.py" = [
+    {file = "stomp.py-5.0.0-py2.py3-none-any.whl", hash = "sha256:44277eeb59d57ce0150adbd2e51493a04f140afb1ca1a71bc8cc3df98f22f430"},
+    {file = "stomp.py-5.0.0-py3.8.egg", hash = "sha256:c125249dabe92f2e7d4fb3bdf4b64469b50dd686defa42d416285c4ca99b26f2"},
+    {file = "stomp.py-5.0.0.tar.gz", hash = "sha256:dba68fc90bdad8829e769e38e5623c8445e4ab13d778be550ddd0f8aaff28d25"},
+]
