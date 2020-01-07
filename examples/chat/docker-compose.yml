@@ -1,0 +1,35 @@
+version: "2"
+services:
+  demo:
+    build: .
+    tty: true
+    stdin_open: true
+    depends_on:
+      - rabbitmq
+    volumes:
+      - .:/src
+    command:
+      [
+        "./wait-for-it.sh",
+        "-t",
+        "60",
+        "rabbitmq:61613",
+        "--",
+        "python",
+        "chat.py",
+      ]
+  chat:
+    build: .
+    tty: true
+    stdin_open: true
+    depends_on:
+      - rabbitmq
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/src
+    command: ["flask", "run", "--host", "0.0.0.0"]
+  rabbitmq:
+    build: ../../rabbitmq
+    ports:
+      - 15674:15674

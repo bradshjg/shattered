@@ -54,10 +54,18 @@ def echo_fancy(headers, body, conn):
 app.run()
 ----
 
-==== Running the Demo
+==== Running the Echo Demo
 
 Start up RabbitMQ using `docker-compose up`
 
 In another shell, run `docker-compose run shattered python examples/echo/echo.py`
 
 In another shell, run `docker-compose run shattered python examples/echo/send.py`
+
+=== Chat Server
+
+A simple chat server is included at `examples/chat`
+
+User `docker-compose up`
+
+Visit http://localhost:5000 in several tabs to chat.

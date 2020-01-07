@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   rabbitmq:
     build: rabbitmq
@@ -7,4 +7,4 @@ services:
     tty: true
     stdin_open: true
     volumes:
-    - .:/src
+      - .:/src
