@@ -12,7 +12,7 @@ services:
       [
         "./wait-for-it.sh",
         "-t",
-        "60",
+        "300",
         "rabbitmq:61613",
         "--",
         "python",
