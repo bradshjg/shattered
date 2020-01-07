@@ -1,0 +1,19 @@
+:toc:
+:toclevels: 4
+:toc-placement!:
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:imagesdir: assets
+endif::[]
+
+= Chat Server
+
+`docker-compose up --build`
+
+Visit http://localhost:5000 in several tabs to test out chat.
+
+Implementation in `chat.py`
