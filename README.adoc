@@ -24,6 +24,16 @@ toc::[]
 
 `pip install shattered`
 
+=== CLI
+
+`shattered run` will run a Shattered app, using one of the following (in order):
+
+1. The `--app` flag.
+2. The `SHATTERED_APP` environment variable.
+3. `app.py` as the application module name.
+
+Use `shattered config` to see the current configuration (same app resolution as `run` command).
+
 === Echo Server
 
 `app.py`
