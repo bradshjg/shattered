@@ -21,7 +21,3 @@ def echo(headers, body, conn):
     data = dict(parse_qsl(body))
     email = data["email"]
     conn.send(body=f'<li>{email}: {data["message"]}</li>', destination="/topic/chat")
-
-
-if __name__ == "__main__":
-    shattered_app.run()

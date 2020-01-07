@@ -15,8 +15,8 @@ services:
         "300",
         "rabbitmq:61613",
         "--",
-        "python",
-        "chat.py",
+        "shattered",
+        "run",
       ]
   chat:
     build: .

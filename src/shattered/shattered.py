@@ -27,15 +27,24 @@ class ShatteredListener(stomp.ConnectionListener):
 class Shattered:
     def __init__(self, **config):
         self.config = config
-        self.host = self.config.get("host", "localhost")
-        self.port = self.config.get("port", 61613)
-        self.username = self.config.get("username", "guest")
-        self.password = self.config.get("password", "guest")
-        self.vhost = self.config.get("vhost", "/")
+        self._set_config_defaults()
+
+        self.host = self.config["host"]
+        self.port = self.config["port"]
+        self.username = self.config["username"]
+        self.password = self.config["password"]
+        self.vhost = self.config["vhost"]
 
         self.subscriptions = {}
         self.conn = None
         self.listener = ShatteredListener(self)
+
+    def _set_config_defaults(self):
+        self.config.setdefault("host", "localhost")
+        self.config.setdefault("port", 61613)
+        self.config.setdefault("username", "guest")
+        self.config.setdefault("password", "guest")
+        self.config.setdefault("vhost", "/")
 
     def add_subscription(self, destination, callback):
         if destination not in self.subscriptions:

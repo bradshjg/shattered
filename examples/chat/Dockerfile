@@ -2,6 +2,7 @@ FROM python:3
 
 ENV FLASK_APP=chat.py
 ENV FLASK_ENV=development
+ENV SHATTERED_APP=chat.py
 
 COPY requirements.txt /src/requirements.txt
 
