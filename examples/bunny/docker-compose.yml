@@ -1,0 +1,30 @@
+version: "2"
+services:
+  logger:
+    build: .
+    depends_on:
+      - rabbitmq
+    volumes:
+      - .:/src
+    command:
+      [
+        "./wait-for-it.sh",
+        "-t",
+        "300",
+        "rabbitmq:61613",
+        "--",
+        "shattered",
+        "run",
+      ]
+  bunny:
+    image: python:slim
+    working_dir: /src
+    volumes:
+      - .:/src
+    ports:
+      - 8000:8000
+    command: ["python", "-m", "http.server"]
+  rabbitmq:
+    build: ../../rabbitmq
+    ports:
+      - 15674:15674

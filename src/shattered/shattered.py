@@ -9,13 +9,16 @@ logger = logging.getLogger(__name__)
 
 
 class ShatteredListener(stomp.ConnectionListener):
+    sub_id = 1
+
     def __init__(self, app):
         self.app = app
 
     def on_connected(self, headers, body):
         logger.info("STOMP connection established")
         for destination in self.app.subscriptions:
-            self.app.conn.subscribe(destination, 1)
+            self.app.conn.subscribe(destination, self.sub_id)
+            self.sub_id += 1
 
     def on_message(self, headers, body):
         logger.info("STOMP message received")

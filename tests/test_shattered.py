@@ -68,7 +68,7 @@ def test_listener_on_connected_subscribes(app, mocker):
     app._run()
     assert app.conn.subscribe.mock_calls == []
     app.listener.on_connected({}, "")
-    assert app.conn.subscribe.mock_calls == [call("foo", 1), call("bar", 1)]
+    assert app.conn.subscribe.mock_calls == [call("foo", 1), call("bar", 2)]
 
 
 def test_listener_on_message(app, mocker):
